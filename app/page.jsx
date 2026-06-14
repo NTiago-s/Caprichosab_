@@ -3,35 +3,75 @@ import Image from "next/image";
 const whatsappUrl =
   "https://wa.me/3756460227?text=Holaa%20me%20gustaria%20hacer%20un%20pedido.";
 
-const products = [
+const sweetProducts = [
   {
-    name: "Budin casero",
-    description:
-      "Miga suave, dorado parejo y ese sabor de merienda hecha en casa.",
-    detail: "Ideal para acompanar mates, cafe o una mesa dulce.",
-    imageClass: "product-image-budin"
+    name: "Budines",
+    description: "Clasicos, humedos y listos para merienda o mesa dulce.",
+    image: "/images/products/budines.webp"
   },
   {
-    name: "Budin con chips",
-    description:
-      "Budin humedo con chips de chocolate distribuidos en cada porcion.",
-    detail: "Una opcion dulce, simple y rendidora para compartir.",
-    imageClass: "product-image-chips"
+    name: "Budines con chips",
+    description: "Con chips de chocolate y miga tierna en cada porcion.",
+    image: "/images/products/budines-con-chips.webp"
   },
   {
-    name: "Pan casero",
-    description:
-      "Panes rusticos con corteza dorada, miga aireada y aroma recien horneado.",
-    detail: "Para comidas, picadas o tener listo durante la semana.",
-    imageClass: "product-image-pan"
+    name: "Cookies",
+    description: "Dulces, doradas y pensadas para acompanar cafe o mates.",
+    image: "/images/fondo.webp"
   },
   {
-    name: "Pan relleno",
-    description:
-      "Pan tierno con relleno abundante, pensado para cortar y servir.",
-    detail: "Perfecto para reuniones, cumpleanos o una cena distinta.",
-    imageClass: "product-image-relleno"
+    name: "Tartas de fruta",
+    description: "Frescas, coloridas y con terminacion casera.",
+    image: "/images/products/tartas-de-fruta.webp"
+  },
+  {
+    name: "Cheesecake",
+    description: "Cremoso, suave y con base dulce para servir frio.",
+    image: "/images/products/cheesecake.webp"
+  },
+  {
+    name: "Brownies",
+    description: "Intensos, chocolatosos y en porciones para compartir.",
+    image: "/images/products/brownies.webp"
+  },
+  {
+    name: "Alfajores",
+    description: "Rellenos generosos con sabor artesanal.",
+    image: "/images/products/alfajores.webp"
   }
+];
+
+const savoryProducts = [
+  {
+    name: "Pan casero relleno",
+    description: "Pan tierno con rellenos dulces o salados.",
+    image: "/images/products/pan-casero-relleno.webp"
+  },
+  {
+    name: "Dulce y salado",
+    description: "Opciones para mesas mixtas, reuniones y pedidos especiales.",
+    image: "/images/fondo.webp"
+  },
+  {
+    name: "Pancitos de leche",
+    description: "Suaves, esponjosos y rendidores para acompanar.",
+    image: "/images/products/pancitos-de-leche.webp"
+  },
+  {
+    name: "Pizzas prelistas",
+    description: "Listas para terminar en casa y resolver comidas rapido.",
+    image: "/images/products/pizzas-prelistas.webp"
+  },
+  {
+    name: "Sorrentinos",
+    description: "Pastas caseras para freezer, almuerzo o cena.",
+    image: "/images/products/sorrentinos.webp"
+  }
+];
+
+const productGroups = [
+  { id: "dulces", title: "Dulces", label: "Reposteria", products: sweetProducts },
+  { id: "salados", title: "Salados y caseros", label: "Horno y cocina", products: savoryProducts }
 ];
 
 const steps = [
@@ -62,12 +102,12 @@ export default function Home() {
 
       <section className="hero section-shell" id="inicio">
         <div className="hero-content">
-          <p className="eyebrow">Budines y panes caseros a pedido</p>
+          <p className="eyebrow">Dulce, salado y casero a pedido</p>
           <h1>Caprichos caseros para compartir sin complicarte.</h1>
           <p className="hero-copy">
-            Budines clasicos, budines con chips de chocolate, panes caseros y
-            panes rellenos preparados con una estetica simple: buen sabor,
-            buen aroma y porciones para disfrutar.
+            Budines, cookies, tartas, cheesecake, brownies, alfajores, panes,
+            pizzas prelistas y sorrentinos preparados para pedidos chicos,
+            reuniones y mesas completas.
           </p>
 
           <div className="hero-actions" aria-label="Acciones principales">
@@ -101,33 +141,42 @@ export default function Home() {
       <section className="products-section section-shell" id="productos">
         <div className="section-heading">
           <p className="eyebrow">Productos</p>
-          <h2>Elegidos de horno casero</h2>
+          <h2>Una carta casera para dulce y salado</h2>
           <p>
-            Una carta corta y clara, con opciones dulces y saladas para pedir
-            por WhatsApp.
+            Productos simples de elegir y faciles de pedir por WhatsApp, con
+            preparaciones para merienda, cumpleanos, reuniones o freezer.
           </p>
         </div>
 
-        <div className="product-grid">
-          {products.map((product) => (
-            <article className="product-card" key={product.name}>
-              <div className="product-image">
-                <Image
-                  src="/images/caprichosab-bakery-hero.png"
-                  alt={product.name}
-                  width={456}
-                  height={320}
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className={product.imageClass}
-                />
+        <div className="product-groups">
+          {productGroups.map((group) => (
+            <section className="product-group" key={group.title} aria-labelledby={`grupo-${group.id}`}>
+              <div className="product-group-heading">
+                <p className="product-tag">{group.label}</p>
+                <h3 id={`grupo-${group.id}`}>{group.title}</h3>
               </div>
-              <div className="product-card-content">
-                <p className="product-tag">A pedido</p>
-                <h3>{product.name}</h3>
-                <p>{product.description}</p>
-                <span>{product.detail}</span>
+
+              <div className="product-grid">
+                {group.products.map((product, index) => (
+                  <article className="product-card" key={product.name}>
+                    <div className="product-card-cover">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        width={420}
+                        height={280}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                    <div className="product-card-content">
+                      <span className="product-number">{String(index + 1).padStart(2, "0")}</span>
+                      <h4>{product.name}</h4>
+                      <p>{product.description}</p>
+                    </div>
+                  </article>
+                ))}
               </div>
-            </article>
+            </section>
           ))}
         </div>
       </section>

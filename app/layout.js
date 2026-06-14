@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Caprichos AB | Budines y panes caseros",
+  title: "Caprichos AB | Reposteria y comidas caseras",
   description:
-    "Budines, budines con chips de chocolate, panes caseros y panes rellenos hechos a pedido.",
+    "Budines, cookies, tartas de fruta, cheesecake, brownies, alfajores, panes, pizzas prelistas y sorrentinos hechos a pedido.",
   metadataBase: new URL("https://caprichosab.com"),
   icons: {
     icon: [
@@ -13,9 +13,9 @@ export const metadata = {
     apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }]
   },
   openGraph: {
-    title: "Caprichos AB | Budines y panes caseros",
+    title: "Caprichos AB | Reposteria y comidas caseras",
     description:
-      "Productos caseros hechos a pedido: budines, budines con chips de chocolate, panes caseros y panes rellenos.",
+      "Productos caseros hechos a pedido: opciones dulces, panes rellenos, pizzas prelistas y sorrentinos.",
     images: ["/images/caprichosab-bakery-hero.png"]
   }
 };
