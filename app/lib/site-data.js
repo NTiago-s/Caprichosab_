@@ -24,13 +24,6 @@ export const sweetProducts = [
     options: ["Naranja", "Limon", "Chips", "Banana", "Banana y nuez", "Mandarina y chips"]
   },
   {
-    name: "Budines con chips",
-    description: "Con chips de chocolate y miga tierna en cada porcion.",
-    image: "/images/products/budines-con-chips.webp",
-    detailTitle: "Sabores disponibles",
-    options: []
-  },
-  {
     name: "Cookies",
     description: "Dulces, doradas y pensadas para acompanar cafe o mates.",
     image: "/images/products/cookies.webp",
