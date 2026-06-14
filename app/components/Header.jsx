@@ -19,7 +19,7 @@ export default function Header() {
         <span className="max-sm:hidden">Caprichos AB</span>
       </a>
 
-      <nav className="flex items-center gap-5 text-sm mx-4 font-bold text-[#e2c3b6] max-lg:hidden" aria-label="Secciones">
+      <nav className="flex items-center gap-5 text-sm mx-4 font-bold text-[#e2c3b6] " aria-label="Secciones">
         {navLinks.map((link) => (
           <a className="transition hover:text-[#ffd9ba] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[rgba(255,232,220,0.72)]" href={link.href} key={link.href}>
             {link.label}

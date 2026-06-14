@@ -54,7 +54,7 @@ function ProductModal({ isOpen, product, titleId, onClose }) {
       }}
     >
       <section
-        className={`relative grid h-[min(84dvh,680px)] w-[min(980px,100%)] transform-gpu grid-cols-[minmax(0,0.92fr)_minmax(0,1fr)] gap-[clamp(1rem,3vw,1.5rem)] overflow-hidden rounded-[24px] border border-[rgba(255,232,220,0.24)] bg-[linear-gradient(135deg,rgba(255,232,220,0.12),transparent_38%),rgba(38,5,13,0.9)] p-[clamp(1rem,3vw,1.25rem)] shadow-[0_34px_110px_rgba(0,0,0,0.58)] backdrop-blur-md transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform max-lg:h-[min(92dvh,760px)] max-lg:grid-cols-1 max-sm:h-[94dvh] max-sm:rounded-[22px] ${
+        className={`relative grid h-[min(84dvh,680px)] w-[min(980px,100%)] transform-gpu grid-cols-[minmax(0,0.92fr)_minmax(0,1fr)] gap-[clamp(1rem,3vw,1.5rem)] overflow-hidden rounded-[24px] border border-[rgba(255,232,220,0.24)] bg-[linear-gradient(135deg,rgba(255,232,220,0.12),transparent_38%),rgba(38,5,13,0.9)] p-[clamp(1rem,3vw,1.25rem)] shadow-[0_34px_110px_rgba(0,0,0,0.58)] backdrop-blur-md transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform max-lg:h-[min(92dvh,760px)] max-lg:grid-cols-1 max-sm:h-[94dvh] max-sm:grid-rows-[auto_auto_1fr] max-sm:gap-3 max-sm:rounded-[22px] ${
           isOpen
             ? "translate-y-0 scale-100 opacity-100"
             : "translate-y-4 scale-[0.98] opacity-0"
@@ -64,15 +64,16 @@ function ProductModal({ isOpen, product, titleId, onClose }) {
         aria-labelledby={titleId}
       >
         <button
-          className="absolute top-3.5 right-3.5 z-[2] min-h-10 cursor-pointer rounded-full border border-[rgba(255,232,220,0.24)] bg-[rgba(38,5,13,0.76)] px-3.5 py-2.5 font-black text-[#ffe8dc] backdrop-blur-xl focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[rgba(255,232,220,0.72)]"
+          className="z-[2] mb-3 ml-auto grid size-10 min-h-0 cursor-pointer place-items-center rounded-full border border-[rgba(255,232,220,0.24)] bg-[rgba(38,5,13,0.76)] p-0 text-xl font-black leading-none text-[#ffe8dc] backdrop-blur-xl focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[rgba(255,232,220,0.72)] sm:absolute sm:top-3.5 sm:right-3.5 sm:mb-0 sm:inline-flex sm:size-auto sm:min-h-10 sm:px-3.5 sm:py-2.5 sm:text-base sm:leading-normal"
           type="button"
           onClick={onClose}
           aria-label="Cerrar detalle del producto"
         >
-          Cerrar
+          <span className="hidden sm:block">Cerrar</span>
+          <span className="block sm:hidden" aria-hidden="true">X</span>
         </button>
 
-        <div className="grid min-h-0 place-items-center overflow-hidden rounded-[18px] border border-[rgba(255,232,220,0.18)] bg-[#26050d] max-lg:h-[38dvh] max-sm:h-[36dvh]">
+        <div className="grid min-h-0 place-items-center overflow-hidden rounded-[18px] border border-[rgba(255,232,220,0.18)] bg-[#26050d] max-lg:h-[38dvh] max-sm:h-[32dvh]">
           <Image
             src={product.detailImage ?? product.image}
             alt={product.name}
