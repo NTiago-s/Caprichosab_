@@ -32,7 +32,8 @@ export default function CodeluxeCredit() {
             <ButtonLink
               className="min-h-9 bg-linear-to-br from-[#d7f0ff] to-[#73c7ff] px-4 py-2 text-sm text-[#041225] shadow-[0_10px_24px_rgba(86,181,255,0.18)] hover:from-[#f1fbff] hover:to-[#a7ddff] max-sm:w-full"
               href="https://codeluxe.tech/"
-              external
+              rel="noopener"
+              target="_blank"
             >
               Visitar pagina
             </ButtonLink>
