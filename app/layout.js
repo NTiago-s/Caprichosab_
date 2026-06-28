@@ -1,10 +1,10 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Caprichos AB | Reposteria y comidas caseras",
+  title: "CaprichoSab | Reposteria y comidas caseras",
   description:
     "Budines, cookies, tartas de fruta, cheesecake, brownies, alfajores, panes, pizzas prelistas y sorrentinos hechos a pedido.",
-  metadataBase: new URL("https://caprichosab.com"),
+  metadataBase: new URL("https://caprichosab.vercel.app"),
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -13,7 +13,7 @@ export const metadata = {
     apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }]
   },
   openGraph: {
-    title: "Caprichos AB | Reposteria y comidas caseras",
+    title: "CaprichoSab | Reposteria y comidas caseras",
     description:
       "Productos caseros hechos a pedido: opciones dulces, panes rellenos, pizzas prelistas y sorrentinos.",
     images: ["/images/caprichosab-bakery-hero.png"]
